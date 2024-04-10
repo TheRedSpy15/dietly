@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "419303235694",
+    "project_id": "nafp-384703",
+    "storage_bucket": "nafp-384703.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419303235694:android:1d85f10584595c072d067f",
+        "android_client_info": {
+          "package_name": "com.chancesoftwarellc.nafp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419303235694-8ngsaaob1roiig4suuqjfhurui6h7geq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7CpgE-KB2UzRSc9dJM6lHPKXpRCgYLXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419303235694-8ngsaaob1roiig4suuqjfhurui6h7geq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "419303235694-8e99lc5t9scs2vu68gugcib1jk2e5tvi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.chancesoftwarellc.nafp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

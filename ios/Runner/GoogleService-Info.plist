@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>419303235694-8e99lc5t9scs2vu68gugcib1jk2e5tvi.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.419303235694-8e99lc5t9scs2vu68gugcib1jk2e5tvi</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCjH0iDBHJoc_HDB2ySUtECr1yRVDEHTd8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>419303235694</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.chancesoftwarellc.nafp</string>
+	<key>PROJECT_ID</key>
+	<string>nafp-384703</string>
+	<key>STORAGE_BUCKET</key>
+	<string>nafp-384703.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:419303235694:ios:8032f3a7215d43812d067f</string>
+</dict>
+</plist>
