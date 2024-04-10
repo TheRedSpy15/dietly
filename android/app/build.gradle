@@ -22,11 +22,6 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
-def flutterCompileSdkVersion = localProperties.getProperty('flutter.compileSdkVersion').toInteger()
-if (flutterCompileSdkVersion == null) {
-    flutterCompileSdkVersion = flutter.compileSdkVersion
-}
-
 def keystoreProperties = new Properties()
 def keystorePropertiesFile = rootProject.file('key.properties')
 if (keystorePropertiesFile.exists()) {
@@ -35,7 +30,7 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     namespace "com.chancesoftwarellc.nafp"
-    compileSdkVersion flutterCompileSdkVersion
+    compileSdkVersion 34
     ndkVersion flutter.ndkVersion
 
     compileOptions {
