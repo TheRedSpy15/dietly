@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:glassfy_flutter/glassfy_flutter.dart';
-import 'package:nafp/log.dart';
 import 'package:nafp/models/historydata.dart';
 
 import '../../charts/weeklyPointsChart.dart';
 import '../../providers/providers.dart';
-import '../../services/PurchaseApi.dart';
-import '../glassfy/paywallContent.dart';
 import '../meals/nutritionStats.dart';
 
 class Charts extends ConsumerWidget {
@@ -17,71 +13,42 @@ class Charts extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final healthData = ref.watch(healthProvider);
     final historyData = ref.watch(historyProvider);
-    final isPremium = ref.watch(premiumProvider);
 
-    PurchaseApi.fetchOffers().then((value) async {
-      try {
-        var permission = await Glassfy.permissions();
-        permission.all?.forEach((p) {
-          logger.i("Permission: ${p.toJson()}");
-          if (p.permissionId == "premium" && p.isValid == true) {
-            ref.read(premiumProvider.notifier).state = true;
-          }
-        });
-      } catch (e) {
-        logger.w("Glassfy failed to fetch permissions: $e");
-      }
-    });
-
-    if (isPremium) {
-      return Scaffold(
-          appBar: AppBar(
-            title: const Text('Charts'),
-          ),
-          body: historyData.when(
-            data: (history) {
-              return ListView(
-                children: [
-                  Card(
-                    child: Column(
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.fromLTRB(8.0, 2, 8.0, 0.0),
-                          child: Text("Used points past Week",
-                              style: TextStyle(
-                                  fontSize: 18.0, fontWeight: FontWeight.bold),
-                              textAlign: TextAlign.center),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.fromLTRB(8.0, 2, 8.0, 8.0),
-                          child: Text("Today starting from the right",
-                              textAlign: TextAlign.center),
-                        ),
-                        WeeklyPointsChart(
-                          yValues: HistoryData.getPointsFromPastWeek(history),
-                        ),
-                      ],
-                    ),
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('Charts'),
+        ),
+        body: historyData.when(
+          data: (history) {
+            return ListView(
+              children: [
+                Card(
+                  child: Column(
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.fromLTRB(8.0, 2, 8.0, 0.0),
+                        child: Text("Used points past Week",
+                            style: TextStyle(
+                                fontSize: 18.0, fontWeight: FontWeight.bold),
+                            textAlign: TextAlign.center),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.fromLTRB(8.0, 2, 8.0, 8.0),
+                        child: Text("Today starting from the right",
+                            textAlign: TextAlign.center),
+                      ),
+                      WeeklyPointsChart(
+                        yValues: HistoryData.getPointsFromPastWeek(history),
+                      ),
+                    ],
                   ),
-                  NutritionStatsCard(data: history),
-                ],
-              );
-            },
-            loading: () => const Center(child: CircularProgressIndicator()),
-            error: (err, stack) => Center(child: Text(err.toString())),
-          ));
-    } else {
-      return Scaffold(
-          appBar: AppBar(
-            title: const Text('Charts'),
-          ),
-          body: healthData.when(
-            data: (data) {
-              return const Paywall(lottieAsset: "stats");
-            },
-            loading: () => const Center(child: CircularProgressIndicator()),
-            error: (err, stack) => Center(child: Text(err.toString())),
-          ));
-    }
+                ),
+                NutritionStatsCard(data: history),
+              ],
+            );
+          },
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (err, stack) => Center(child: Text(err.toString())),
+        ));
   }
 }

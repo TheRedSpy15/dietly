@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:nafp/constants.dart';
 import 'package:nafp/log.dart';
 import 'package:nafp/services/generation.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
@@ -144,7 +145,8 @@ class FoodSearchDelegate extends SearchDelegate {
     var offResult = OpenFoodAPIClient.searchProducts(null, configuration);
 
     return ListView(children: [
-      if (query.trim().isNotEmpty) GeminiFoodCard(food: query),
+      if (query.trim().isNotEmpty && gemKey.isNotEmpty)
+        GeminiFoodCard(food: query),
       FutureBuilder(
         future: offResult,
         builder: (context, snapshot) {

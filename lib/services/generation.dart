@@ -2,17 +2,13 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:glassfy_flutter/glassfy_flutter.dart';
 import 'package:nafp/log.dart';
 import 'package:nafp/providers/providers.dart';
-import 'package:nafp/screens/glassfy/paywallContent.dart';
 import 'package:nafp/screens/points/points.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
 
-import 'PurchaseApi.dart';
 import 'openfoodapi.dart';
 
 // riverpod future provider for openaiProductRequest
@@ -95,75 +91,53 @@ class GeminiFoodSheetContent extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     var proteinFocus = ref.watch(proteinFocusProvider);
-    final isPremium = ref.watch(premiumProvider);
 
-    checkSubscription(ref);
-
-    if (isPremium) {
-      return ref.watch(geminiProductProvider(food)).when(
-            data: (product) {
-              return Wrap(
-                children: [
-                  SizedBox(
-                    child: Center(
-                      child: FoodDetails(
-                        imageUrl: product.imageFrontUrl ?? '',
-                        foodName: product.productName ?? '',
-                        calories: product.nutriments?.getValue(
-                                Nutrient.energyKCal, PerSize.serving) ??
-                            0.0,
-                        carbs: product.nutriments?.getValue(
-                                Nutrient.carbohydrates, PerSize.serving) ??
-                            0.0,
-                        fat: product.nutriments
-                                ?.getValue(Nutrient.fat, PerSize.serving) ??
-                            0.0,
-                        protein: product.nutriments?.getValue(
-                                Nutrient.proteins, PerSize.serving) ??
-                            0.0,
-                        points: calcPoints(product, proteinFocus, null),
-                        sugar: product.nutriments
-                                ?.getValue(Nutrient.sugars, PerSize.serving) ??
-                            0.0,
-                        salt: product.nutriments
-                                ?.getValue(Nutrient.salt, PerSize.serving) ??
-                            0.0,
-                        fiber: product.nutriments
-                                ?.getValue(Nutrient.fiber, PerSize.serving) ??
-                            0.0,
-                        servings: product.servingSize ?? '',
-                      ),
+    return ref.watch(geminiProductProvider(food)).when(
+          data: (product) {
+            return Wrap(
+              children: [
+                SizedBox(
+                  child: Center(
+                    child: FoodDetails(
+                      imageUrl: product.imageFrontUrl ?? '',
+                      foodName: product.productName ?? '',
+                      calories: product.nutriments?.getValue(
+                              Nutrient.energyKCal, PerSize.serving) ??
+                          0.0,
+                      carbs: product.nutriments?.getValue(
+                              Nutrient.carbohydrates, PerSize.serving) ??
+                          0.0,
+                      fat: product.nutriments
+                              ?.getValue(Nutrient.fat, PerSize.serving) ??
+                          0.0,
+                      protein: product.nutriments
+                              ?.getValue(Nutrient.proteins, PerSize.serving) ??
+                          0.0,
+                      points: calcPoints(product, proteinFocus, null),
+                      sugar: product.nutriments
+                              ?.getValue(Nutrient.sugars, PerSize.serving) ??
+                          0.0,
+                      salt: product.nutriments
+                              ?.getValue(Nutrient.salt, PerSize.serving) ??
+                          0.0,
+                      fiber: product.nutriments
+                              ?.getValue(Nutrient.fiber, PerSize.serving) ??
+                          0.0,
+                      servings: product.servingSize ?? '',
                     ),
-                  )
-                ],
-              );
-            },
-            loading: () => const Padding(
-              padding: EdgeInsets.all(20.0),
-              child: CircularProgressIndicator(),
-            ),
-            error: (err, stack) => Text('Error: $err'),
-          );
-    } else {
-      // premium not purchased
-      HapticFeedback.vibrate();
-      return const Paywall();
-    }
-  }
-
-  void checkSubscription(WidgetRef ref) {
-    PurchaseApi.fetchOffers().then((value) async {
-      try {
-        var permission = await Glassfy.permissions();
-        permission.all?.forEach((p) {
-          logger.i("Permission: ${p.toJson()}");
-          if (p.permissionId == "premium" && p.isValid == true) {
-            ref.read(premiumProvider.notifier).state = true;
-          }
-        });
-      } catch (e) {
-        logger.w("Glassfy failed to fetch permissions: $e");
-      }
-    });
+                  ),
+                )
+              ],
+            );
+          },
+          loading: () => const Padding(
+            padding: EdgeInsets.all(20.0),
+            child: CircularProgressIndicator(),
+          ),
+          error: (err, stack) => Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text('Failed to initialize Gemini AI. $err'),
+          ),
+        );
   }
 }

@@ -1,6 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:glassfy_flutter/glassfy_flutter.dart';
-import 'package:glassfy_flutter/models.dart';
 import 'package:nafp/models/historydata.dart';
 import 'package:nafp/models/pantryItem.dart';
 import 'package:nafp/models/pocketbase/blogpost.dart';
@@ -54,10 +52,6 @@ final ingredientsFactProvider = FutureProvider.autoDispose
 
 final pantryProvider = FutureProvider<List<PantryItem>>((ref) async {
   return PantryItem.loadPantry();
-});
-
-final premiumOfferingsProvider = FutureProvider<GlassfyOfferings?>((ref) async {
-  return await Glassfy.offerings();
 });
 
 final premiumProvider = StateProvider<bool>((ref) => false);
