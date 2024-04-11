@@ -1,0 +1,2 @@
+
+Refatoração completa de todo o aplicativo. Apresentando o V2 do Dietly, as contas de usuário são coisa do passado!

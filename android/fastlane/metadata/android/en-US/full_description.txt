@@ -1,0 +1,15 @@
+Elevate Your Dieting Experience with Dietly – Your Personal Wellness Companion
+
+Are you looking for a seamless way to transform your eating habits and enhance your overall well-being? Introducing Dietly, where the simplicity of a diet tracker meets the power of subtle Artificial Intelligence and integrated social features.
+
+🌟 Key Features 🌟
+
+🍏 Personalized Diet Tracking: Dietly empowers you to effortlessly monitor and manage your daily nutrition intake, all tailored to your unique physical well-being. Whether you're counting calories, tracking macros, or simply logging your intake, we've got you covered.
+
+🤖 Intelligent Insights: AI is all the craze today! So we added a dash of it to provide an essentially endless library of nutrition data. If we don't have a product in our database, we provide you the option of using AI to help make sure you can account for all your daily food intake.
+
+🔒 Your Privacy, Your Control: We understand that not everyone wants their personal health information on display. That's why Dietly has fully open sourced it's code, and doesn't even require an account to use!
+
+🌐 Seamless Integration: Dietly seamlessly integrates with your daily routine, making it easy to record your meals, snacks, and hydration. Whether you're at home, on the go, or dining out, tracking your diet has never been this convenient.
+
+Take the first step towards a healthier you with Dietly. Join a community that values your well-being, respects your privacy, and empowers you to make meaningful dietary choices. Download Dietly today and embark on your journey to a better, more nourished you! 🥗🏋️‍♀️🥑

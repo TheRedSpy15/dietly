@@ -1,0 +1,2 @@
+
+Refonte complète de l'ensemble de l'application. Présentation de la V2 de Dietly, les comptes utilisateur appartiennent au passé !

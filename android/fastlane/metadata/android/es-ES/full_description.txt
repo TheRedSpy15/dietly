@@ -1,0 +1,5 @@
+Dietly es un sencillo rastreador de dietas combinado con algunas funciones sociales e inteligencia artificial sutiles.
+
+El objetivo principal es proporcionar un método sencillo para realizar un seguimiento de lo que consume en función de su bienestar físico y ayudarle a mantenerse motivado al permitirle seguir a otros que hacen lo mismo que usted desde la aplicación.
+
+Sin embargo, a pesar de tener cierta funcionalidad social, Dietly comprende que no todas las personas que desean mejorar su salud quieren que el mundo conozca su información personal. Por eso te damos la opción de lo que compartes con otros. ¿Solo quieres usar la aplicación para tu dieta? ¡Ningún problema!

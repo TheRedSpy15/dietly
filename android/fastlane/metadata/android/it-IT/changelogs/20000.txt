@@ -1,0 +1,2 @@
+
+Rifatturazione completa dell'intera app. Presentazione della V2 di Dietly, gli account utente sono una cosa del passato!

@@ -1,0 +1,2 @@
+
+Reestructuración completa de toda la aplicación. ¡Presentando la versión 2 de Dietly, las cuentas de usuario son cosa del pasado!

@@ -1,0 +1,5 @@
+Dietly ist ein einfacher Diät-Tracker, gemischt mit einigen subtilen künstlichen Intelligenz- und sozialen Funktionen
+
+Das Hauptziel besteht darin, eine einfache Methode bereitzustellen, mit der Sie anhand Ihres körperlichen Wohlbefindens verfolgen können, was Sie konsumieren, und Ihnen dabei zu helfen, motiviert zu bleiben, indem Sie in der App anderen folgen können, die das Gleiche tun wie Sie
+
+Obwohl Dietly über eine gewisse soziale Funktionalität verfügt, versteht jedoch, dass nicht jeder, der seine Gesundheit verbessern möchte, möchte, dass die Welt seine persönlichen Daten erfährt. Deshalb geben wir Ihnen die Möglichkeit, das, was Sie mit anderen teilen, zu teilen. Möchten Sie die App einfach nur für Ihre Ernährung nutzen? Kein Problem!

@@ -1,0 +1,5 @@
+Dietly est un simple outil de suivi de régime associé à une intelligence artificielle subtile et à des fonctionnalités sociales.
+
+L'objectif principal est de fournir une méthode simple pour suivre ce que vous consommez en fonction de votre bien-être physique et de vous aider à rester motivé en vous permettant de suivre les autres qui font la même chose que vous depuis l'application.
+
+Cependant, malgré certaines fonctionnalités sociales, Dietly comprend que tous ceux qui souhaitent améliorer leur santé ne souhaitent pas que le monde connaisse leurs informations personnelles. C'est pourquoi nous vous donnons la possibilité de partager ce que vous partagez avec les autres. Vous souhaitez simplement utiliser l'application pour votre régime ? Aucun problème!

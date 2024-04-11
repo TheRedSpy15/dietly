@@ -1,0 +1,5 @@
+Dietly adalah pelacak diet sederhana yang dipadukan dengan beberapa Kecerdasan Buatan dan fitur sosial yang halus
+
+Tujuan utamanya adalah memberikan metode yang mudah untuk melacak apa yang Anda konsumsi berdasarkan kesejahteraan fisik Anda, dan membantu Anda tetap termotivasi dengan memungkinkan Anda mengikuti orang lain melakukan hal yang sama seperti Anda dari dalam aplikasi
+
+Namun, meski memiliki beberapa fungsi sosial, Dietly memahami bahwa tidak semua orang yang ingin meningkatkan kesehatannya ingin dunia mengetahui informasi pribadinya. Itu sebabnya kami memberi Anda pilihan tentang apa yang Anda bagikan dengan orang lain. Hanya ingin menggunakan aplikasi ini untuk diet Anda? Tidak masalah!
