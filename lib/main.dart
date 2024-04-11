@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:glassfy_flutter/glassfy_flutter.dart';
 import 'package:go_router/go_router.dart';
-import 'package:nafp/constants.dart';
 import 'package:nafp/log.dart';
 import 'package:nafp/models/plan.dart';
 import 'package:nafp/models/pocketbase/blogpost.dart';
@@ -12,27 +12,25 @@ import 'package:nafp/screens/meals/plan.dart';
 import 'package:nafp/screens/settings/settings.dart';
 import 'package:nafp/services/database.dart';
 import 'package:openfoodfacts/openfoodfacts.dart' as off;
-import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  if (gemKey.isEmpty) {
-    SharedPreferences.getInstance().then((prefs) {
-      gemKey = prefs.getString('geminiApiKey') ?? '';
-      if (gemKey.isNotEmpty) {
-        logger.i('Gemini API key found');
-        Gemini.init(apiKey: gemKey);
-      } else {
-        logger.w('Gemini API key not found');
-      }
-    });
-  }
+  Gemini.init(apiKey: const String.fromEnvironment('GEMINI_API_KEY'));
 
   await initDatabases();
 
+  try {
+    logger.i("Initializing Glassfy");
+    await Glassfy.initialize('821feb96c6024f2b9db92964b6726cda',
+        watcherMode: false);
+    logger.i("Glassfy initialized");
+  } catch (e) {
+    logger.w("Glassfy failed to initialize: $e");
+  }
+
   off.OpenFoodAPIConfiguration.userAgent = off.UserAgent(
-      name: 'dietly-2.0.0-mobile-fdroid', url: 'https://chancesoftwarellc.com');
+      name: 'dietly-2.0.0-mobile', url: 'https://chancesoftwarellc.com');
   off.OpenFoodAPIConfiguration.globalCountry = off.OpenFoodFactsCountry.USA;
   off.OpenFoodAPIConfiguration.globalLanguages = <off.OpenFoodFactsLanguage>[
     off.OpenFoodFactsLanguage.ENGLISH

@@ -43,11 +43,13 @@ dependencies:
   go_router: ^13.2.2
   mobile_scanner: ^4.0.1
   lottie: ^3.0.0
+  flutter_inappwebview: ^6.0.0
   shared_preferences: ^2.2.2
   openfoodfacts: ^3.5.0
   cached_network_image: ^3.3.1
   fl_chart: ^0.67.0
   intl: ^0.19.0
+  glassfy_flutter: ^1.6.2
   gsform:
     git:
       url: https://github.com/TheRedSpy15/gsform.git
@@ -88,6 +90,8 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  assets:
+    - assets/lottie/stats.json
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
