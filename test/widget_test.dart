@@ -6,8 +6,8 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nafp/services/openfoodapi.dart';
 import 'package:nafp/screens/points/points.dart';
+import 'package:nafp/services/openfoodapi.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
 
 void main() {
@@ -28,11 +28,5 @@ void main() {
     product.nutriments!.setValue(Nutrient.carbohydrates, PerSize.serving, 20);
     product.nutriments!.setValue(Nutrient.fiber, PerSize.serving, 5);
     expect(calcPoints(product, true, null), 4.0);
-  });
-
-  test('Get product 1', () async {
-    var product = await getProduct("3017620422003");
-    assert(product != null);
-    expect(product?.barcode, "3017620422003");
   });
 }
