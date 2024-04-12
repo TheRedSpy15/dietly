@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # of the product and file versions while build-number is used as the build suffix.
 
 # format: x.x.x+x0x0x (i.e 1.5.3+10503)
-version: 2.0.1+20001
+version: 2.0.2+20002
 
 environment:
   sdk: '>=2.19.6 <3.0.0'
@@ -55,7 +55,6 @@ dependencies:
   path_provider: ^2.1.2
   flutter_local_notifications: ^17.0.0
   shimmer: ^3.0.0
-  rate_my_app: ^2.0.0
   logger: ^2.2.0
   sembast: ^3.7.1
   path: ^1.9.0
